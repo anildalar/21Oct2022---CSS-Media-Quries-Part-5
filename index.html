@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lecture22 -CSS Media Queries Part 5</title>
+        <style>
+            header,footer{
+                width:100%;
+                min-height:100px;
+            }
+            header{
+                background:red;
+            }
+            main{
+                background:blue;
+            }
+            footer{
+                clear:both;
+                background:green;
+            }
+
+            main > section:first-child{
+                width:100%;
+                height:1000px;
+                border:3px dashed orange;
+                
+                background:lightblue;
+            }
+
+            main > section:last-child{
+                width:100%;
+                background: purple;
+            }
+            main > section:last-child > article{
+                width:49.8%;
+                height:200px;
+                background:orange;
+                border:1px dashed #000;
+                float: left;
+            }
+            header > nav > ul{
+                list-style: none;
+                padding-left: 0px;
+            }
+
+            header > nav > ul > li{
+                display: inline-block;
+                padding: 8px 5px;
+                background:pink;
+            }
+
+
+
+            /*
+                @media not|only mediatype and (mediafeature and|or|not mediafeature) {
+                    CSS-Code;
+                }
+            */
+            /* Small Device Mobile */
+            @media only screen and (max-width:767px){
+                main > section:first-child{
+                    height:200px;
+                }
+                main > section:last-child > article{
+                    width:100%;
+                
+                }
+                header > nav > ul > li{
+                    width:100%;
+                }
+            }
+            /* Medium Device Mobile */
+            @media only screen and (min-width:768px) and (max-width:991px){
+                main > section:last-child > article{
+                    width:24.7%;
+                
+                }
+            }
+            /* Large Device Mobile */
+            @media only screen and (min-width:992px){
+
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>Link 1</li>
+                    <li>Link 2</li>
+                    <li>Link 3</li>
+                    <li>Link 4</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>Banner</section>
+            <section>
+                <article>Article 1</article>
+                <article>Article 2</article>
+                <article>Article 3</article>
+                <article>Article 4</article>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>
